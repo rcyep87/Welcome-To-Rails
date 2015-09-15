@@ -8,10 +8,4 @@ class UsersController < ApplicationController
     render text: "#{user_array}"
   end
 
-  def show
-    begin
-      user = User.find(params[:id])
-      render text: "params: #{}"
-  end
-
 end
