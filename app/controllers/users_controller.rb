@@ -9,8 +9,12 @@ class UsersController < ApplicationController
   end
 
   def show
-    user = User.find(params[:id])
-    render text: "Name: #{user.full_name} Age: #{user.age}", status: 200
+    begin
+      user = User.find(params[:id])
+      render text: "Name: #{user.full_name} Age: #{user.age}", status: 200
+    rescue ActiveRecord::RecordNotFound
+      render text: "Sorry, user with id of #{params[:id]} was not found", status: 404
+    end
   end
 
 end
