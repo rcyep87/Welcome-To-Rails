@@ -8,4 +8,9 @@ class UsersController < ApplicationController
     render text: "#{user_array}"
   end
 
+  def show
+    user = User.find(params[:id])
+    render text: "Name: #{user.full_name} Age: #{user.age}", status: 200
+  end
+
 end
