@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def index
     user = User.all
-      if params["first_name"] == "s"
+      if params[:first_name] == "s"
         user_array = user.where("first_name LIKE ?", "s%").map do |x|
           "Name: #{x.first_name} #{x.last_name}, Age: #{x.age}"
         end
@@ -23,7 +23,4 @@ class UsersController < ApplicationController
       render text: "Sorry, user with id of #{params[:id]} was not found", status: 404
     end
   end
-
-  # User.where("first_name LIKE ?", "s%")
-
 end

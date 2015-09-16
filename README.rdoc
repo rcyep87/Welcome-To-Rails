@@ -1,28 +1,14 @@
 == README
+This program allows a website to interface with a user database. It only allows you to retrieve information using Ruby on Rails.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To run this program:
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* run 'bundle install'
+* rails server (turns on server)
+* visit localhost:3000
+* to retrieve the entire user database, go to this URL http://localhost:3000/users
+* to retrieve only the user from the database with that id as plain text, go to
+  this URL http://localhost:3000/users/:id
+* if you attempt to go to an id that does not exist, you will be returned an error
+* to retrieve all users whose first name begins with an "s", go to this URL
+  http://localhost:3000/users?first_name=s
